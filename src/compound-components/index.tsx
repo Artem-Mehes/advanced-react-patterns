@@ -5,17 +5,23 @@ interface ICompoundComponent {
 }
 
 const CompoundComponent = ({
-  onToggle = (...args) => console.log('onToggle', ...args),
+  onToggle = (...args) => console.log('CompoundComponent onToggle', ...args),
 }: ICompoundComponent): JSX.Element => {
   return (
-    <Toggle onToggle={onToggle}>
-      <div>
-        <Toggle.On>The button is on</Toggle.On>
-        <Toggle.Off>The button is off</Toggle.Off>
-      </div>
+    <>
+      <h1>Compound Component</h1>
 
-      <Toggle.Button />
-    </Toggle>
+      <Toggle onToggle={onToggle}>
+        <div>
+          <Toggle.On>The button is on</Toggle.On>
+          <Toggle.Off>The button is off</Toggle.Off>
+        </div>
+
+        <Toggle.Button />
+      </Toggle>
+
+      <hr />
+    </>
   );
 };
 
